@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cooking Book - Test Page</title>
+    </head>
+    <body>
+        <h1>List of Recipes</h1>
+        {% if recipes %}
+            {% for recipe in recipes %}
+                <div>
+                    <h2>{{ recipe.title }}</h2>
+                    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+                </div>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
