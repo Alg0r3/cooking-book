@@ -40,6 +40,28 @@ Which data to use for the recipes though ? Well, numerous API are free and avail
 
 ### PHASE 1: Fetch data
 
+[Spoonacular documentation](https://spoonacular.com/food-api/docs)
+
+API often have requests limitation since they are providing services to a vast numbers of users. In this case, Spoonacular has a daily quota system in place for free users so the API calls must be made carefully.
+
+Spoonacular has an endpoint that fits perfectly the needs of the application : finding recipes that use as many of the given ingredients as possible and require as few additional ingredients as possible.
+
+    GET https://api.spoonacular.com/recipes/findByIngredients
+
+Another interesting endpoint to get the informations about multiple recipes at once, this is equivalent to calling the Get Recipe Information endpoint multiple times, but faster.
+
+    GET https://api.spoonacular.com/recipes/informationBulk
+
+This endpoint could be used to randomize the recipe given when inputting the ingredients by setting the `sort` request parameter to `random`.
+
+    GET https://api.spoonacular.com/recipes/complexSearch
+
+Finally, this endpoint can get an analyzed breakdown of a recipe's instructions. Each step is enriched with the ingredients and equipment required. This could be used to generate a PDF document with the instructions for a given recipe. 
+
+    GET https://api.spoonacular.com/recipes/{id}/analyzedInstructions
+
+W.I.P.
+
 The HTTP module of Symfony makes it easier to work with external API:
 
     composer require symfony/http-client
@@ -48,6 +70,10 @@ Twig to temporary render the fetched data:
 
     composer require "twig/twig:^3.0"
     composer require symfony/twig-bundle
+
+Forms
+
+    composer require symfony/form
 
 W.I.P.
 
