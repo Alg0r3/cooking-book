@@ -2,6 +2,10 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-test:
-    path: /test
-    controller: App\Controller\TestController::test
+test_api:
+    path: /test/api
+    controller: App\Controller\TestController::fetchApi
+
+test_form:
+    path: test/form
+    controller: App\Controller\TestController::formIngredients

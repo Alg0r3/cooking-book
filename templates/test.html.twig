@@ -4,14 +4,19 @@
         <title>Cooking Book - Test Page</title>
     </head>
     <body>
-        <h1>List of Recipes</h1>
-        {% if recipes %}
+        <h1>Cooking Book - Tests</h1>
+        {% if recipes is defined %}
+            <h2>Data fetched :</h2>
             {% for recipe in recipes %}
                 <div>
                     <h2>{{ recipe.title }}</h2>
                     <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
                 </div>
             {% endfor %}
+        {% endif %}
+        {% if form is defined %}
+            <h2>Form created :</h2>
+            {{ form(form) }}
         {% endif %}
     </body>
 </html>
