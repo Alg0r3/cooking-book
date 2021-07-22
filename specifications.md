@@ -62,6 +62,14 @@ Finally, this endpoint can get an analyzed breakdown of a recipe's instructions.
 
 W.I.P.
 
+    composer require --dev symfony/maker-bundle
+
+How to let the user input ingredients ?
+- simple form then treat the data afterwards
+- from ingredients located in the database
+- 
+
+
 The HTTP module of Symfony makes it easier to work with external API:
 
     composer require symfony/http-client

@@ -5,6 +5,10 @@
     </head>
     <body>
         <h1>Cooking Book - Tests</h1>
+        {% if form is defined %}
+            <h2>Form created :</h2>
+            {{ form(form) }}
+        {% endif %}
         {% if recipes is defined %}
             <h2>Data fetched :</h2>
             {% for recipe in recipes %}
@@ -13,10 +17,6 @@
                     <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
                 </div>
             {% endfor %}
-        {% endif %}
-        {% if form is defined %}
-            <h2>Form created :</h2>
-            {{ form(form) }}
         {% endif %}
     </body>
 </html>

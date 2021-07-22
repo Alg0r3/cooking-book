@@ -4,17 +4,17 @@ namespace App\Entity;
 
 class Ingredient
 {
-    private array $ingredients;
+    private string $ingredients;
     private int $number;
     private int $ranking;
     private bool $pantry;
 
-    public function getIngredients(): ?array
+    public function getIngredients(): ?string
     {
         return $this->ingredients;
     }
 
-    public function setIngredients(array $ingredients): self
+    public function setIngredients(string $ingredients): self
     {
         $this->ingredients = $ingredients;
 
