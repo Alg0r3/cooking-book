@@ -5,7 +5,7 @@ namespace App\Form;
 use App\Entity\Ingredient;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\RangeType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,9 +17,10 @@ class IngredientType extends AbstractType
     {
         $builder
             ->add('ingredients', SearchType::class)
-            ->add('number', RangeType::class, [
+            ->add('number', NumberType::class, [
+                'html5' => true,
                 'attr' => [
-                    'min' => 5,
+                    'min' => 1,
                     'max' => 25
                 ]
             ])

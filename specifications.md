@@ -20,7 +20,7 @@ Bonus requirements:
 - Unit tests
 - Front-end: Bootstrap and Jquery
 
-## Basic planning
+## Basic Planning
 
 As mentioned earlier, the application's back-end will be made with the Symfony framework. The main goal here is to learn and get better at working with Symfony.
 
@@ -38,7 +38,7 @@ Which data to use for the recipes though ? Well, numerous API are free and avail
 
 ## Coding
 
-### PHASE 1: Fetch data
+### PHASE 1: API Endpoints
 
 [Spoonacular documentation](https://spoonacular.com/food-api/docs)
 
@@ -60,15 +60,37 @@ Finally, this endpoint can get an analyzed breakdown of a recipe's instructions.
 
     GET https://api.spoonacular.com/recipes/{id}/analyzedInstructions
 
+### PHASE 2: User Input
+
+Now, how to let the user input their ingredients ? 
+
+- With a simple HTML `<input type=search>`, then the data will be treated afterwards
+
+> **Pro:** Easy to implement
+
+> **Con:** Need to formate the data
+
+- From a list of ingredients extracted from the database
+
+> **Pro:** Ingredients can be sorted by categories and types
+
+> **Con:** Need to have a huge amount of data in the database
+
+Idea of implementations:
+- Use the csv containing all the ingredients from Spoonacular, save it in a json file/database or cache it
+- When the user is typing the name of an ingredient, autocomplete/pull out potential ingredient with the same name as buttons
+- Upon clicking those buttons, it'll add the ingredients in a "What's in my fridge ?" list on the side to be prepped for the get request
+
 W.I.P.
+
+Maker for entities, controllers and such:
 
     composer require --dev symfony/maker-bundle
 
-How to let the user input ingredients ?
-- simple form then treat the data afterwards
-- from ingredients located in the database
-- 
+Symfony ships with a pure-JavaScript library - called Webpack Encore - that makes working with CSS and JavaScript easier:
 
+    composer require symfony/webpack-encore-bundle
+    yarn install
 
 The HTTP module of Symfony makes it easier to work with external API:
 

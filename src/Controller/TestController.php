@@ -24,13 +24,13 @@ class TestController extends AbstractController
             $listIngredients = $form->getData();
             $recipes = $data->fetchRecipes($listIngredients);    
 
-            return $this->render('test.html.twig', [
+            return $this->render('test/test.html.twig', [
                 'recipes' => $recipes,
                 'form' => $form->createView()    
             ]);
         }
 
-        return $this->render('test.html.twig', [
+        return $this->render('test/test.html.twig', [
             'form' => $form->createView()
         ]);
     }
