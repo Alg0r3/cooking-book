@@ -34,4 +34,10 @@ class TestController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    #[Route('/react', name: 'react')]
+    public function react(): Response
+    {
+        return $this->render('base.html.twig');
+    }
 }

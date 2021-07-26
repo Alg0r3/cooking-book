@@ -78,16 +78,25 @@ Now, how to let the user input their ingredients ?
 
 > **Con:** Need to have a huge amount of data in the database
 
-Idea of implementations:
-- Use the csv containing all the ingredients from Spoonacular, save it in a json file/database or cache it
-- When the user is typing the name of an ingredient, autocomplete/pull out potential ingredient with the same name as buttons
-- Upon clicking those buttons, it'll add the ingredients in a "What's in my fridge ?" list on the side to be prepped for the get request
+Actual implementation, splitting the difference:
+- Spoonacular provides a .csv file containing their 1.000 more popular ingredients, instead of creating a database, a local file can be made by converting the .csv file to the JSON format
+- When the user is typing the name of an ingredient, a function will autocomplete/pull out potential ingredients with a similar name
+- Upon validating the entry, the ingredient will be add in a "What's in my fridge ?" list on the side to be prepped for the request
 
-Webpack Encore
+### PHASE 2.5: Frontend ?
 
-Symfony ships with a pure-JavaScript library - called Webpack Encore - that makes it easier working with CSS and JavaScript.
+After trying to implement some complex JavaScript functions in the Twig templates of Symfony, I decided to chose a more definitive and easily scalable option when it comes to the front-end part of the application: React.js.
 
-JS VS SYMFONY FML
+Having some experience with that framework and wanting to increase my knowledge about it, the decision was quickly made.
+
+An existing library called Webpack Encore is mandatory to make React.js works with Symfony.
+
+Webpack Encore is a simpler way to integrate Webpack into an application. It wraps Webpack, offering a clean & powerful API for bundling JavaScript modules, pre-processing CSS & JS and compiling and minifying assets.
+
+W.I.P.
+
+Uninstall:
+- symfony:twig ?
 
 W.I.P.
 
