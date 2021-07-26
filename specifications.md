@@ -36,6 +36,8 @@ Which data to use for the recipes though ? Well, numerous API are free and avail
 
 > MySQL 15.1 Distrib 10.3.29 - MariaDB
 
+> Node ???
+
 ## Coding
 
 ### PHASE 1: API Endpoints
@@ -80,6 +82,12 @@ Idea of implementations:
 - Use the csv containing all the ingredients from Spoonacular, save it in a json file/database or cache it
 - When the user is typing the name of an ingredient, autocomplete/pull out potential ingredient with the same name as buttons
 - Upon clicking those buttons, it'll add the ingredients in a "What's in my fridge ?" list on the side to be prepped for the get request
+
+Webpack Encore
+
+Symfony ships with a pure-JavaScript library - called Webpack Encore - that makes it easier working with CSS and JavaScript.
+
+JS VS SYMFONY FML
 
 W.I.P.
 
