@@ -1,10 +1,10 @@
 import React from 'react';
-import IngredientAutoComplete from './IngredientAutoComplete';
+import AutoComplete from './AutoComplete';
 
 const Home = () => {
     return (
         <div className="home">
-            <IngredientAutoComplete />
+            <AutoComplete />
         </div>
     );
 };
