@@ -1,39 +1,31 @@
 import React, { useState } from 'react';
 
-const INGREDIENTS = [
-    {'name': 'egg', 'id': 1},
-    {'name': 'bread', 'id': 2},
-    {'name': 'chicken', 'id': 3},
-    {'name': 'olive oil', 'id': 4},
-    {'name': 'onion', 'id': 5},
-    {'name': 'garlic', 'id': 6},
-    {'name': 'tomato', 'id': 7}, 
-    {'name': 'pasta', 'id': 8},
-    {'name': 'milk', 'id': 9},
-    {'name': 'cheese', 'id': 10},
-];
+const AutoComplete = (props) => {
+    const [items, setItems] = useState([]);
 
-const AutoComplete = () => {
-    const testRegex = (event) => {
-        let items = [];
+    const sortRegex = (event) => {
+        let sorted = [];
         if (event.target.value === '')
             return;
         const regex = new RegExp(`(${event.target.value})\\w*`, 'g');
-        const found = INGREDIENTS.find((elem) => {
-            if (elem.name.match(regex))
-                items.push(elem.name);
+        props.data.find((elem) => {
+            if (elem.name.match(regex) && sorted.length <= 9)
+                sorted.push(elem.name);
         });
 
-        console.log(items);
+        setItems(sorted);
     }
 
     return (
-        <form className="auto-complete">
+        <div className="auto-complete">
             <label>
                 What's in your fridge ?
-                <input type="text" onChange={(event) => testRegex(event)} />
+                <input type="text" onChange={(event) => sortRegex(event)} />
             </label>
-        </form>
+            {items.map(item => (
+                <p>{item}</p>
+            ))}
+        </div>
     ); 
 }
 
