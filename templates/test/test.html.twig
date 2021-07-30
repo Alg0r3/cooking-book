@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Cooking Book - Test Page</title>
-    </head>
-    <body>
-        <h1>Cooking Book - Tests</h1>
-        {% if form is defined %}
-            <h2>Form created :</h2>
-            {{ form(form) }}
-        {% endif %}
-        {% if recipes is defined %}
-            <h2>Data fetched :</h2>
-            {% for recipe in recipes %}
-                <div>
-                    <h2>{{ recipe.title }}</h2>
-                    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
-                </div>
-            {% endfor %}
-        {% endif %}
-    </body>
-</html>
+{% extends './base.html.twig' %}
+
+{% block title %}Cooking Book - Test{% endblock %}
+
+{% block body %}
+    <h1>Cooking Book - Tests</h1>
+    <div id="root">
+        <!-- React.js code -->
+    </div>
+{% endblock %}

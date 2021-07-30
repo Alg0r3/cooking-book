@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AutoCompleteIngredient = (props) => {
+const Fridge = (props) => {
     const [ingredients, setIngredients] = useState([]);
     const [fridge, setFridge] = useState([]);
 
@@ -11,7 +11,7 @@ const AutoCompleteIngredient = (props) => {
         if (/^ *$/.test(e.target.value))
             setIngredients([]);
         else {
-            props.data.find((elem) => {
+            props.food.find((elem) => {
                 if (elem.name.match(regex) && sorted.length <= 9)
                     sorted.push(elem);
             });
@@ -35,10 +35,16 @@ const AutoCompleteIngredient = (props) => {
         setFridge(newArr);
     };
 
+    const handleValidate = (e) => {
+        e.preventDefault();
+
+        props.parentCallback(fridge);
+    }
+
     return (
-        <div className="auto-complete">
-            <h2>Search ingredients</h2>
-            <input type="text" onChange={(e) => sortRegex(e)} />
+        <div className="fridge">
+            <label htmlFor="search-ingredient">Search ingredients :</label>
+            <input type="search" id="search-ingredient" onChange={(e) => sortRegex(e)} />
             <ul>
                 {ingredients.map(ingredient => (
                     <li key={ingredient.id}>
@@ -55,8 +61,9 @@ const AutoCompleteIngredient = (props) => {
                     </li>
                 ))}
             </ul>
+            <button onClick={(e) => handleValidate(e)}>Validate</button>
         </div>
     ); 
 };
 
-export default AutoCompleteIngredient;
+export default Fridge;

@@ -95,8 +95,7 @@ Webpack Encore is a simpler way to integrate Webpack into an application. It wra
 
 W.I.P.
 
-Uninstall:
-- symfony:twig ?
+    yarn add axios
 
 W.I.P.
 

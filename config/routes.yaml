@@ -5,7 +5,3 @@
 test_form:
     path: test/form
     controller: App\Controller\TestController::formIngredients
-
-test_react:
-    path: /test/react
-    controller: App\Controller\TestController::react
