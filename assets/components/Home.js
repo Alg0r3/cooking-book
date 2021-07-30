@@ -1,12 +1,12 @@
 import React from 'react';
-import AutoComplete from './AutoComplete';
+import AutoCompleteIngredient from './AutoCompleteIngredient';
 import ListIngredients from '../data/list-ingredients.json';
 
 const Home = () => {
     return (
         <div className="home">
             <h1>Cooking Book</h1>
-            <AutoComplete data={ListIngredients} />
+            <AutoCompleteIngredient data={ListIngredients} />
         </div>
     );
 };
