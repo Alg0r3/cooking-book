@@ -20,10 +20,20 @@ const AutoCompleteIngredient = (props) => {
         }
     };
 
-    const handleClick = (e, ingredient) => {
+    const fillFridge = (e, ingredient) => {
         e.preventDefault();
-        setFridge(arr => [...arr, ingredient]);
-    }
+        const found = fridge.find(elem => elem.id == ingredient.id)
+        
+        if (!found)
+            setFridge(oldArr => [...oldArr, ingredient]);
+    };
+
+    const emptyFridge = (e, id) => {
+        e.preventDefault();
+        const newArr = fridge.filter(elem => elem.id != id);
+
+        setFridge(newArr);
+    };
 
     return (
         <div className="auto-complete">
@@ -31,13 +41,18 @@ const AutoCompleteIngredient = (props) => {
             <input type="text" onChange={(e) => sortRegex(e)} />
             <ul>
                 {ingredients.map(ingredient => (
-                    <li key={ingredient.id}><button onClick={(e) => handleClick(e, ingredient)}>{ingredient.name}</button></li>
+                    <li key={ingredient.id}>
+                        <button onClick={(e) => fillFridge(e, ingredient)}>{ingredient.name}</button>
+                    </li>
                 ))}
             </ul>
             <h2>What's in your fridge ?</h2>
             <ul>
                 {fridge.map(elem => (
-                    <li key={elem.id}>{elem.name}</li>
+                    <li key={elem.id}>
+                        {elem.name}
+                        <button onClick={(e) => emptyFridge(e, elem.id)}>x</button>
+                    </li>
                 ))}
             </ul>
         </div>
