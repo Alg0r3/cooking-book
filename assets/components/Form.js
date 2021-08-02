@@ -5,22 +5,40 @@ import axios from 'axios';
 
 const Form = () => {
     const [fridge, setFridge] = useState([]);
-    
+    const [numRecipe, setNumRecipe] = useState(10);
+    const [ranking, setRanking] = useState(2);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        setNumRecipe(e.target[2].value);
+        setRanking(e.target[3].value);
+
+        axios.post('https://localhost:8000/api/data', {
+            ingredients: fridge,
+            number: numRecipe,
+            ranking: ranking
+        }).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        });
+    };
+
     const handleCallback = (childData) => {
         setFridge(childData);
-        console.log(childData);
     };
-    
+
     return (
         <form className="form" onSubmit={(e) => handleSubmit(e)}>
-            <Fridge food={ListIngredients} parentCallback={handleCallback} />
             <label htmlFor="number-recipe">Number of recipes displayed :</label>
             <input type="number" id="number-recipe" min="5" max="25" defaultValue="10" />
             <label htmlFor="minmax-ingredient">Would you rather maximize the number of ingredients used or minimize the number of missing ingredients ?</label>
-            <select id="minmax-ingredient">
+            <select id="minmax-ingredient" defaultValue="2">
                 <option value="1">Maximize</option>
                 <option value="2">Minimize</option>
             </select>
+            <Fridge food={ListIngredients} parentCallback={handleCallback} />
             <button type="submit">Submit</button>
         </form>
     );

@@ -12,16 +12,11 @@ class FetchData
         private string $apiKey
     ) {}
 
-    public function fetchRecipes(Ingredient $listIngredients): array
-    {
-        $ingredients = $listIngredients->getIngredients();
-        $number = $listIngredients->getNumber();
-        $ranking = $listIngredients->getRanking();
-        $pantry = $listIngredients->getPantry();
-        
+    public function fetchRecipes(array $ingredient, int $number, int $ranking): array
+    {   
         $response = $this->client->request(
             'GET',
-            'https://api.spoonacular.com/recipes/findByIngredients?ingredients='.$ingredients.'&number='.$number.'&ranking='.$ranking.'&ignorePantry='.$pantry.'&apiKey='.$this->apiKey
+            'https://api.spoonacular.com/recipes/findByIngredients?ingredients='.$ingredient.'&number='.$number.'&ranking='.$ranking.'&ignorePantry=true&apiKey='.$this->apiKey
         );
 
         $content = $response->toArray();

@@ -5,3 +5,8 @@
 test_form:
     path: test/form
     controller: App\Controller\TestController::formIngredients
+
+api_data:
+    path: api/data
+    controller: App\Controller\ApiController::setData
+    
