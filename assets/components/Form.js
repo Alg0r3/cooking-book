@@ -10,7 +10,7 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
         setNumRecipe(e.target[2].value);
         setRanking(e.target[3].value);
 
@@ -26,7 +26,13 @@ const Form = () => {
     };
 
     const handleCallback = (childData) => {
-        setFridge(childData);
+        let array = [];
+        
+        for (const elem of childData) {
+            array.push(elem.name);
+        }
+
+        setFridge(array);
     };
 
     return (
