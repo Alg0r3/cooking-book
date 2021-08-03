@@ -14,10 +14,17 @@ const Form = () => {
         setNumRecipe(e.target[2].value);
         setRanking(e.target[3].value);
 
-        axios.post('https://localhost:8000/api/data', {
-            ingredients: fridge,
-            number: numRecipe,
-            ranking: ranking
+        axios({
+            url: 'https://localhost:8000/api/data',
+            method: 'post',
+            data: {
+                ingredients: fridge,
+                number: numRecipe,
+                ranking: ranking
+            },
+            headers: {
+                'Content-Type' : 'application/json'
+            }
         }).then(res => {
             console.log(res);
         }).catch(err => {

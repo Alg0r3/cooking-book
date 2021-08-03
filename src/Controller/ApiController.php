@@ -14,9 +14,11 @@ class ApiController extends AbstractController
     #[Route('/data', name: 'data')]
     public function setData(FetchData $data, Request $req): Response
     {
-        $ingredient = $req->get('ingredients');
-        $number = $req->get('number');
-        $ranking = $req->get('ranking');
+        $temp = json_decode($req->getContent(), true);
+        
+        $ingredient = $temp['ingredients'];
+        $number = $temp['number'];
+        $ranking = $temp['ranking'];
         
         $recipes = $data->fetchRecipes($ingredient, $number, $ranking);
         
