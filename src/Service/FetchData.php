@@ -16,7 +16,7 @@ class FetchData
     {   
         $response = $this->client->request(
             'GET',
-            'https://api.spoonacular.com/recipes/findByIngredients?ingredients='.$ingredient.'&number='.$number.'&ranking='.$ranking.'&ignorePantry=true&apiKey='.$this->apiKey
+            'https://api.spoonacular.com/recipes/findByIngredients?ingredients='.implode(',', $ingredient).'&number='.$number.'&ranking='.$ranking.'&ignorePantry=true&apiKey='.$this->apiKey
         );
 
         $content = $response->toArray();
