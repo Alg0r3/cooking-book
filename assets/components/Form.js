@@ -10,9 +10,6 @@ const Form = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        setNumRecipe(e.target[2].value);
-        setRanking(e.target[3].value);
 
         axios({
             url: 'https://localhost:8000/api/data',
@@ -32,6 +29,18 @@ const Form = () => {
         });
     };
 
+    const handleNumRecipe = (e) => {
+        e.preventDefault();
+
+        setNumRecipe(e.target.value);
+    };
+
+    const handleRanking = (e) => {
+        e.preventDefault();
+
+        setRanking(e.target.value);
+    };
+
     const handleCallback = (childData) => {
         let array = [];
         
@@ -45,9 +54,9 @@ const Form = () => {
     return (
         <form className="form" onSubmit={(e) => handleSubmit(e)}>
             <label htmlFor="number-recipe">Number of recipes displayed :</label>
-            <input type="number" id="number-recipe" min="5" max="25" defaultValue="10" />
+            <input type="number" id="number-recipe" min="5" max="25" value={numRecipe} onChange={handleNumRecipe} />
             <label htmlFor="minmax-ingredient">Would you rather maximize the number of ingredients used or minimize the number of missing ingredients ?</label>
-            <select id="minmax-ingredient" defaultValue="2">
+            <select id="minmax-ingredient" value={ranking} onChange={handleRanking}>
                 <option value="1">Maximize</option>
                 <option value="2">Minimize</option>
             </select>
