@@ -17,8 +17,8 @@ class ApiController extends AbstractController
         $temp = json_decode($req->getContent(), true);
         
         $ingredient = $temp['ingredients'];
-        $number = $temp['number'];
-        $ranking = $temp['ranking'];
+        $number = intval($temp['number']);
+        $ranking = intval($temp['ranking']);
         
         $recipes = $data->fetchRecipes($ingredient, $number, $ranking);
         
