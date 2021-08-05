@@ -62,6 +62,16 @@ Finally, this endpoint can get an analyzed breakdown of a recipe's instructions.
 
     GET https://api.spoonacular.com/recipes/{id}/analyzedInstructions
 
+### PHASE 1.5: Features
+
+From those different endpoints that can be hit, some obvious features can be deduced :
+| Feature name | Implementation |
+| --- | --- |
+| "What's in your fridge ?" | Input ingredients, output recipes |
+| "Looking for a specific recipe ?" | Input recipe name, output recipe |
+| "Not sure about what to cook ?" | No input, output a random recipes |
+| "Don't forget your recipe !" | Return a .pdf file of the selected recipe |
+
 ### PHASE 2: User Input
 
 Now, how to let the user input their ingredients ? 
@@ -93,6 +103,9 @@ An existing library called Webpack Encore is mandatory to make React.js works wi
 
 Webpack Encore is a simpler way to integrate Webpack into an application. It wraps Webpack, offering a clean & powerful API for bundling JavaScript modules, pre-processing CSS & JS and compiling and minifying assets.
 
+    composer require symfony/webpack-encore-bundle
+    yarn install
+
 W.I.P.
 
     yarn add axios
@@ -102,11 +115,6 @@ W.I.P.
 Maker for entities, controllers and such:
 
     composer require --dev symfony/maker-bundle
-
-Symfony ships with a pure-JavaScript library - called Webpack Encore - that makes working with CSS and JavaScript easier:
-
-    composer require symfony/webpack-encore-bundle
-    yarn install
 
 The HTTP module of Symfony makes it easier to work with external API:
 
