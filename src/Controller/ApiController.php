@@ -11,19 +11,17 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/api', name: 'api_')]
 class ApiController extends AbstractController
 {
-    #[Route('/data', name: 'data')]
+    #[Route('/data', name: 'data',  methods: 'POST')]
     public function setData(FetchData $data, Request $req): Response
     {
-        $temp = json_decode($req->getContent(), true);
+        $arr = $req->toArray();
         
-        $ingredient = $temp['ingredients'];
-        $number = intval($temp['number']);
-        $ranking = intval($temp['ranking']);
+        $ingredients = $arr['ingredients'];
+        $number = intval($arr['number']);
+        $ranking = intval($arr['ranking']);
         
-        $recipes = $data->fetchRecipes($ingredient, $number, $ranking);
-        
-        return $this->render('api/api.html.twig', [
-            'recipes' => $recipes
-        ]);
+        $recipes = $data->fetchRecipes($ingredients, $number, $ranking);
+
+        return $this->json($recipes);
     }
 }
