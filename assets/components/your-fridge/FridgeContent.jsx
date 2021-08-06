@@ -28,7 +28,7 @@ const FridgeContent = (props) => {
     }
 
     return (
-        <div className="fridge">
+        <div className="fridge-content">
             <h2>List of ingredients :</h2>
             <input type="search" onChange={(e) => sort(e)} />
             <ul>

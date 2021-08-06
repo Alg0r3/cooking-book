@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import FridgeContent from './FridgeContent';
+import RecipeList from './RecipeList';
 import { postRequest } from './httpRequest';
 
 const FridgeForm = () => {
     const [fridge, setFridge] = useState([]);
     const [recipes, setRecipes] = useState();
+    const [isLoading, setIsLoading] = useState(true);
     const [state, setState] = React.useState({
         numRecipe: 10,
         ranking: 2
@@ -17,8 +19,11 @@ const FridgeForm = () => {
             number: state.numRecipe,
             ranking: state.ranking
         }        
-        const result = postRequest('https://localhost:8000/api/data', data);
-        setRecipes(result);
+        postRequest('https://localhost:8000/api/data', data)
+            .then(res => {
+                setRecipes(res);
+                setIsLoading(false);
+            });
     };
 
     const handleChange = (event) => {
@@ -34,7 +39,7 @@ const FridgeForm = () => {
     };
 
     return (
-        <div className="form">
+        <div className="fridge-form">
             <FridgeContent parentCallback={handleCallback} />
             <form onSubmit={(event) => handleSubmit(event)}>
                 <label htmlFor="number-recipe">Number of recipes displayed :</label>
@@ -46,6 +51,7 @@ const FridgeForm = () => {
                 </select>
                 <button type="submit">Submit</button>
             </form>
+            {isLoading ? <div className="loading">Loading...</div> : <RecipeList recipes={recipes} />}
         </div>
     );
 };
