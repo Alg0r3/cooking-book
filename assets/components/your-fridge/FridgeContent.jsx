@@ -12,7 +12,6 @@ const FridgeContent = (props) => {
     const fillFridge = (event, ingredient) => {
         event.preventDefault();
         const found = fridge.find(elem => elem == ingredient)
-        
         if (!found)
             setFridge(oldArr => [...oldArr, ingredient]);
     };
@@ -20,13 +19,11 @@ const FridgeContent = (props) => {
     const emptyFridge = (event, ingredient) => {
         event.preventDefault();
         const newArr = fridge.filter(elem => elem != ingredient);
-
         setFridge(newArr);
     };
 
     const handleValidate = (event) => {
         event.preventDefault();
-
         props.parentCallback(fridge);
     }
 

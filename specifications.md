@@ -88,10 +88,12 @@ Now, how to let the user input their ingredients ?
 
 > **Con:** Need to have a huge amount of data in the database
 
-Actual implementation, splitting the difference:
+Actual implementation, splitting the differences:
 - Spoonacular provides a .csv file containing their 1.000 more popular ingredients, instead of creating a database, a local file can be made by converting the .csv file to the JSON format
 - When the user is typing the name of an ingredient, a function will autocomplete/pull out potential ingredients with a similar name
 - Upon validating the entry, the ingredient will be add in a "What's in my fridge ?" list on the side to be prepped for the request
+
+The user input data would then be send to the Symfony backend with a POST request, thhat soukj W I P AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 ### PHASE 2.5: Frontend ?
 

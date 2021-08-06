@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import FridgeContent from './FridgeContent';
-import axios from 'axios';
+import { postRequest } from './httpRequest';
 
 const FridgeForm = () => {
     const [fridge, setFridge] = useState([]);
+    const [recipes, setRecipes] = useState();
     const [state, setState] = React.useState({
         numRecipe: 10,
         ranking: 2
@@ -11,28 +12,17 @@ const FridgeForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        axios({
-            url: 'https://localhost:8000/api/data',
-            method: 'post',
-            data: {
-                ingredients: fridge,
-                number: state.numRecipe,
-                ranking: state.ranking
-            },
-            headers: {
-                'Content-Type' : 'application/json'
-            }
-        }).then(res => {
-            console.log(res);
-        }).catch(err => {
-            console.log(err);
-        });
+        const data = {
+            ingredients: fridge,
+            number: state.numRecipe,
+            ranking: state.ranking
+        }        
+        const result = postRequest('https://localhost:8000/api/data', data);
+        setRecipes(result);
     };
 
     const handleChange = (event) => {
         event.preventDefault();
-
         setState({
             ...state,
             [event.target.name]: event.target.value 
