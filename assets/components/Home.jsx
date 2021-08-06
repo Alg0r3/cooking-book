@@ -1,10 +1,10 @@
 import React from 'react';
-import Form from './your-fridge/Form';
+import FridgeForm from './your-fridge/FridgeForm';
 
 const Home = () => {
     return (
         <div className="home">
-            <Form />
+            <FridgeForm />
         </div>
     );
 };
