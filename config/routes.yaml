@@ -6,10 +6,6 @@ home:
     path: /
     controller: App\Controller\HomeController::index
 
-fridge:
-    path: fridge
-    controller: App\Controller\FridgeController::fridge
-
 api_data:
     path: api/data
     controller: App\Controller\ApiController::setData
