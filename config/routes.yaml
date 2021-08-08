@@ -3,10 +3,10 @@
 #    controller: App\Controller\DefaultController::index
 
 home:
-    path: /
-    controller: App\Controller\HomeController::index
+    path: /{reactRouting}
+    controller: App\Controller\MainController::index
 
-api_data:
-    path: api/data
-    controller: App\Controller\ApiController::setData
+api_recipes:
+    path: api/recipes
+    controller: App\Controller\ApiController::getRecipes
     

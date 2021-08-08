@@ -19,7 +19,7 @@ const FridgeForm = () => {
             number: state.numRecipe,
             ranking: state.ranking
         }        
-        postRequest('https://localhost:8000/api/data', data)
+        postRequest('https://localhost:8000/api/recipes', data)
             .then(res => {
                 setRecipes(res);
                 setIsLoading(false);
