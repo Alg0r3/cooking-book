@@ -89,11 +89,11 @@ Now, how to let the user input their ingredients ?
 > **Con:** Need to have a huge amount of data in the database
 
 Actual implementation, splitting the differences:
-- Spoonacular provides a .csv file containing their 1.000 more popular ingredients, instead of creating a database, a local file can be made by converting the .csv file to the JSON format
-- When the user is typing the name of an ingredient, a function will autocomplete/pull out potential ingredients with a similar name
-- Upon validating the entry, the ingredient will be add in a "What's in my fridge ?" list on the side to be prepped for the request
+- Spoonacular provides a .csv file containing their 1.000 more popular ingredients: instead of creating a database, a local file can be made by converting the .csv file to the JSON format
+- When the user is typing the name of an ingredient, a function will autocomplete/pull out the potential ingredients with a similar name
+- Upon validating the entry, the ingredient will then be added in a "What's in my fridge ?" list to be prepped for the request
 
-The user input data would then be send to the Symfony backend with a POST request, thhat soukj W I P AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+When the request is ready, the user input data is sent to the Symfony backend, who'll interact with the Spoonacular API to return the resquested recipes. 
 
 ### PHASE 2.5: Frontend ?
 
@@ -108,7 +108,7 @@ Webpack Encore is a simpler way to integrate Webpack into an application. It wra
     composer require symfony/webpack-encore-bundle
     yarn install
 
-W.I.P.
+Even though the current Fetch API of vanilla JavaScript is decent enough, Axios allows a little bit more flexibility when it comes to Http requests :
 
     yarn add axios
 
@@ -122,14 +122,9 @@ The HTTP module of Symfony makes it easier to work with external API:
 
     composer require symfony/http-client
 
-Twig to temporary render the fetched data:
-
+Twig:
     composer require "twig/twig:^3.0"
     composer require symfony/twig-bundle
-
-Forms
-
-    composer require symfony/form
 
 W.I.P.
 
