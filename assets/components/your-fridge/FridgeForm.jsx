@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import FridgeContent from './FridgeContent';
 import RecipeList from './RecipeList';
-import { postRequest } from './httpRequest';
+import useAxios from './useAxios';
 
 const FridgeForm = () => {
     const [fridge, setFridge] = useState([]);
-    const [recipes, setRecipes] = useState();
-    const [isLoading, setIsLoading] = useState(true);
+    const [config, setConfig] = useState({});
+    const {data, isLoading, error} = useAxios(config);
     const [state, setState] = React.useState({
         numRecipe: 10,
         ranking: 2
@@ -14,16 +14,15 @@ const FridgeForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const data = {
-            ingredients: fridge,
-            number: state.numRecipe,
-            ranking: state.ranking
-        }        
-        postRequest('https://localhost:8000/api/recipes', data)
-            .then(res => {
-                setRecipes(res);
-                setIsLoading(false);
-            });
+        setConfig({
+            url: 'https://localhost:8000/api/recipes',
+            method: 'post',
+            data: {
+                ingredients: fridge,
+                number: state.numRecipe,
+                ranking: state.ranking
+            }
+        });
     };
 
     const handleChange = (event) => {
@@ -51,7 +50,8 @@ const FridgeForm = () => {
                 </select>
                 <button type="submit">Submit</button>
             </form>
-            {isLoading ? <div className="loading">Loading...</div> : <RecipeList recipes={recipes} />}
+            {error && <div className="error">{error}</div>}
+            {isLoading ? <div className="loading">Loading...</div> : <RecipeList recipes={data} />}
         </div>
     );
 };

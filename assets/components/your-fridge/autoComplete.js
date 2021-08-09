@@ -9,7 +9,6 @@ export const autoComplete = (event, array) => {
             if (elem.match(regex) && sorted.length <= 9)
                 sorted.push(elem);
         });
-
         return sorted;
     }
 };
