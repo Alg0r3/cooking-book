@@ -9,4 +9,8 @@ home:
 api_recipes:
     path: api/recipes
     controller: App\Controller\ApiController::getRecipes
+
+api_recipes_id:
+    path: api/recipes/{id}
+    controller: App\Controller\ApiController::getRecipe
     

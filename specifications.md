@@ -138,3 +138,7 @@ W.I.P.
 | | Duplicates data | The API access is restricted |
 
 Should the data fetched from Spoonacular be saved in the database ? A middle ground can be found by caching some of the data.
+
+### Todo
+
+- Add a useEffect cleanup for useAxios hook

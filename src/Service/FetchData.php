@@ -23,4 +23,16 @@ class FetchData
 
         return $content;
     }
+
+    public function fetchRecipe(int $id): array
+    {
+        $response = $this->client->request(
+            'GET',
+            'https://api.spoonacular.com/recipes/'.$id.'/information?apiKey='.$this->apiKey
+        );
+
+        $content = $response->toArray();
+
+        return $content;
+    }
 }

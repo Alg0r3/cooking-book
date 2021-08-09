@@ -24,4 +24,12 @@ class ApiController extends AbstractController
 
         return $this->json($recipes);
     }
+
+    #[Route('/recipes/{id}', name: 'recipes_id',  methods: 'POST')]
+    public function getRecipe(int $id, FetchData $data): Response
+    {
+        $recipe = $data->fetchRecipe($id);
+        
+        return $this->json($recipe);
+    }
 }
