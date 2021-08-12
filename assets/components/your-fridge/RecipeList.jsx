@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import Recipe from './Recipe';
 
 const RecipeList = (props) => {
     const history = useHistory();
@@ -10,14 +11,11 @@ const RecipeList = (props) => {
     };
 
     return (
-        <div className="recipe-list">
+        <section className="recipe-list">
             {props.recipes.map(recipe => {
-                return <div key={recipe.id} onClick={event => handleClick(event, recipe.id)}>
-                    <p>{recipe.title}</p>
-                    <img src={recipe.image} />
-                </div>
+                return <Recipe key={recipe.id} details={recipe} onClick={event => handleClick(event, recipe.id)} />
             })}
-        </div>
+        </section>
     );
 };
 

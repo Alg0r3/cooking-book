@@ -142,3 +142,10 @@ Should the data fetched from Spoonacular be saved in the database ? A middle gro
 ### Todo
 
 - Add a useEffect cleanup for useAxios hook
+
+### Mentions
+
+- Background photo by <a href="https://unsplash.com/@mero_dnt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Chinh Le Duc</a> on <a href="https://unsplash.com/s/photos/cooking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- <a target="_blank" href="https://icons8.com/icon/95456/ingredients">Ingredients</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+  

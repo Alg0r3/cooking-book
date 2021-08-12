@@ -10,13 +10,13 @@ const App = () => {
         <BrowserRouter>
             <div className="App">
                 <Navbar />
-                <div className="content">
+                <main className="content">
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/fridge" component={FridgeForm} />
                         <Route path="/recipes/:id" component={RecipeDetails} />
                     </Switch>
-                </div>
+                </main>
             </div>
         </BrowserRouter>
     );
