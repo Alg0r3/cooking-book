@@ -2,7 +2,6 @@
 
 namespace App\Service;
 
-use App\Entity\Ingredient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class FetchData

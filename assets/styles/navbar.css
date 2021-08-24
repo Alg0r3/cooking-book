@@ -1,18 +1,17 @@
 .navbar {
-    width: 5rem;
-    height: 100vh;
+    width: 100vw;
+    height: 4rem;
     position: fixed;
     background-color: var(--bg-primary);
     transition: 200ms ease;
+    top: 0;
 }
-    .navbar:hover {
-        width: 16rem;
-    }
     .navbar:hover .link-text {
-        display: block;
+        display: inline;
+        transition: opacity var(--transition-speed);
     }
     .navbar:hover .logo svg {
-        transform: rotate(-180deg);
+        transform: rotate(-360deg);
     }
 
 .navbar-nav {
@@ -20,47 +19,38 @@
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
 }
 
 .logo {
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 1rem;
     text-align: center;
     color: var(--text-secondary);
     background: var(--bg-secondary);
     font-size: 1.5rem;
     letter-spacing: 0.3ch;
-    width: 100%;
 }
     .logo svg {
         transform: rotate(0deg);
         transition: var(--transition-speed);
     }
 
-.nav-item {
-    width: 100%;
-}
-
 .nav-link {
     display: flex;
     align-items: center;
-    height: 5rem;
+    height: 4rem;
     color: var(--text-primary);
     text-decoration: none;
+    justify-content: center;
     filter: grayscale(100%) opacity(0.7);
     transition: var(--transition-speed);
+    padding: 0 1rem;
 }
     .nav-link:hover {
         filter: grayscale(0%) opacity(1);
         background: var(--bg-secondary);
         color: var(--text-secondary);
-    }
-    .nav-link svg {
-        min-width: 2rem;
-        margin: 0 1.5rem;
     }
 
 .fa-home, .fa-utensils {
@@ -69,6 +59,5 @@
 }
 
 .link-text {
-    display: none;
     margin-left: 1rem;
 }

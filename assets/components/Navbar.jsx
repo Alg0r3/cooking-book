@@ -11,7 +11,7 @@ const Navbar = () => {
                 <li className="logo">
                     <a href="#" className="nav-link">    
                         <FontAwesomeIcon icon={faAngleDoubleRight} />
-                        <span className="link-text logo-text">Menu</span>
+                        <span className="link-text logo-text">Cooking Book</span>
                     </a>
                 </li>
                 <li className="nav-item">
