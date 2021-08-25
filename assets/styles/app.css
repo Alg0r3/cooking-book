@@ -2,14 +2,17 @@
 
 @import url('./header.css');
 @import url('./navbar.css');
+@import url('./recipe.css');
 
 :root {
     font-size: 16px;
     font-family: 'Open Sans';
     --text-primary: hsl(0, 0%, 100%);
     --text-secondary: hsl(0, 0%, 71%);
-    --bg-primary: hsl(240, 14%, 16%);
-    --bg-secondary: hsl(240, 9%, 9%);
+    --bg-primary: hsl(216, 18%, 16%);
+    --bg-secondary: hsl(217, 10%, 25%);
+    --bg-tertiary: hsl(42, 100%, 71%);
+    --bg-quaternary: hsl(0, 0%, 93%);
     --transition-speed: 600ms;
 }
 
@@ -26,10 +29,14 @@ body {
         background: hsl(240, 9%, 13%);
     }
     body::-webkit-scrollbar-thumb {
-        background: hsl(256, 44%, 50%);
+        background: hsl(49, 51%, 47%);
     }
 
 main {
     margin: 0;
     padding: 1rem;
+}
+
+h1, h2, h3, p {
+    margin: 0;
 }

@@ -1,0 +1,28 @@
+.recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recipe {
+    max-width: 312px;
+    margin: 0.25rem
+}
+    .recipe img {
+
+    }
+
+.recipe-info {
+    display: flex;
+}
+
+.recipe-favorite {
+    position: relative;
+    top: 1.5em;
+    left: 14em;
+    font-size: 1.25em;
+}
+
+.recipe-icon {
+
+}
