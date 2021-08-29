@@ -13,11 +13,11 @@ const Recipe = ({details}) => {
                     <FontAwesomeIcon icon={faHeart} />
                     <p>{details.likes}</p>
                 </div>
-                <div className="recipe-icon">
+                <div className="recipe-icon n1">
                     <FontAwesomeIcon icon={faDrumstickBite} />
                     <p>{details.missedIngredientCount}</p>
                 </div>
-                <div className="recipe-icon">
+                <div className="recipe-icon n2">
                     <FontAwesomeIcon icon={faDrumstickBite} />
                     <p>{details.usedIngredientCount}</p>
                 </div>

@@ -6,14 +6,21 @@
 
 .recipe {
     max-width: 312px;
-    margin: 0.25rem
+    margin: 0.25rem;
+    margin: 1rem;
+    border-radius: 2px;
+    box-shadow: 0 14px 28px hsla(0, 0%, 0%, 0.25), 0 10px 10px hsla(0, 0%, 0%, 0.22);
 }
+    .recipe:hover {
+        box-shadow: 0 14px 28px hsla(0, 0%, 0%, 0.251), 0 10px 10px hsla(0, 0%, 0%, 0.22);
+    }
     .recipe img {
-
+        width: 100%;
     }
 
 .recipe-info {
     display: flex;
+    justify-content: space-around;
 }
 
 .recipe-favorite {
@@ -21,8 +28,18 @@
     top: 1.5em;
     left: 14em;
     font-size: 1.25em;
+    color: hsl(61, 100%, 50%);
 }
 
 .recipe-icon {
 
 }
+    .recipe-icon .fa-heart {
+        color: hsl(0, 100%, 44%);
+    }
+    .recipe-icon .fa-drumstick-bite .n1 {
+        color: hsl(39, 100%, 50%);
+    }
+    .recipe-icon .fa-drumstick-bite .n2 {
+        color: hsl(120, 100%, 36%);
+    }
