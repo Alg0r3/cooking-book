@@ -1,10 +1,13 @@
 import { faDrumstickBite, faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Recipe = ({details}) => {
+    const history = useHistory();
+
     return (
-        <article className="recipe">
+        <article className="recipe" onClick={() => history.push(`/recipes/${details.id}`, details.id)}>
             <FontAwesomeIcon className="recipe-favorite" icon={faStar} />
             <img src={details.image} alt={details.title} />
             <h3>{details.title}</h3>

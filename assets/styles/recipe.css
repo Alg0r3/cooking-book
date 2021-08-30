@@ -28,18 +28,18 @@
     top: 1.5em;
     left: 14em;
     font-size: 1.25em;
-    color: hsl(61, 100%, 50%);
+    color: hsl(55, 100%, 50%);
 }
 
-.recipe-icon {
+/* .recipe-icon {
 
-}
+} */
     .recipe-icon .fa-heart {
         color: hsl(0, 100%, 44%);
     }
-    .recipe-icon .fa-drumstick-bite .n1 {
+    .recipe-icon.n1 .fa-drumstick-bite {
         color: hsl(39, 100%, 50%);
     }
-    .recipe-icon .fa-drumstick-bite .n2 {
+    .recipe-icon.n2 .fa-drumstick-bite {
         color: hsl(120, 100%, 36%);
     }
